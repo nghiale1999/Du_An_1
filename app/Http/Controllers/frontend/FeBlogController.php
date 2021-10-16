@@ -38,7 +38,7 @@ class FeBlogController extends Controller
         $rate = ModelRate::where('id_blog',$id)->get();
         $tbs = 0;
         if(!empty($rate)){
-            $dem = 0;
+            $dem = 0.01;
             $tong = 0;
             foreach ($rate as $value) {
                 $tong += $value->sosao;
@@ -76,12 +76,23 @@ class FeBlogController extends Controller
     //lấy và lưu đánh giá sao từ ajax
     public function rate(Request $request){
        
-       
-        $data = new ModelRate;
-        $data->id_blog = $request->blog;
-        $data->id_user = Auth::user()->id;
-        $data->sosao = $request->rate;
-        $data->save();
+        $id_blog = $request->blog;
+        $id_user = Auth::user()->id;
+
+        $rate = ModelRate::all();
+
+        foreach ($rate as  $value) {
+            if($value->id_blog == $id_blog && $value->id_user == $id_user){
+                return 'ban danh gia bai viet';
+            }else{
+                $data = new ModelRate;
+                $data->id_blog = $request->blog;
+                $data->id_user = Auth::user()->id;
+                $data->sosao = $request->rate;
+                $data->save();
+            }
+        }
+ 
         if($data->save()){
             return 'danh gia thanh cong';
         }else{

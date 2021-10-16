@@ -22,23 +22,54 @@ Route::group([
     'namespace'=>'frontend',
     ],function(){
         
-        Route::get('/register','RegisterController@index');
-        Route::post('/register','RegisterController@store');
+    Route::get('/register','RegisterController@index');
+    Route::post('/register','RegisterController@store');
 
         
-        Route::get('/login','LoginController@index');
-        Route::post('/login','LoginController@login');
+    Route::get('/login','LoginController@index');
+    Route::post('/login','LoginController@login');
 
-        Route::get('/blog','FeBlogController@GetBlog');
+    Route::get('/blog','FeBlogController@GetBlog');
        
-        Route::get('/blogsingle/{id}','FeBlogController@GetBlogSingle');
-        Route::post('/blogsingle/{id}','FeBlogController@SaveComment');
+    Route::get('/blogsingle/{id}','FeBlogController@GetBlogSingle');
+    Route::post('/blogsingle/{id}','FeBlogController@SaveComment');
         
-        Route::post('/blog/ajax','FeBlogController@rate');
-        
-       
+    Route::post('/blog/ajax','FeBlogController@rate');
 
-    });
+    Route::get('/account','AccountController@GetAccount');
+    Route::post('/account','AccountController@PostAccount');
+        
+    Route::get('/product','ProductController@GetProduct');
+
+    Route::get('/addproduct','ProductController@GetAddProduct');
+    Route::post('/addproduct','ProductController@PostAddProduct');
+
+    Route::get('/prodouct/delete/{id}','ProductController@DeleteProduct');
+
+    Route::get('/prodouct/edit/{id}','ProductController@GetEditProduct');
+    Route::post('/prodouct/edit/{id}','ProductController@EditProduct');
+
+    Route::get('/homeproduct','ProductController@HomeProduct');
+
+
+    Route::get('/productdetail/{id}','ProductController@DetailProduct');
+
+    Route::get('/cart','CartController@GetCart');
+    Route::post('/addcart','CartController@AddCart');
+
+    Route::post('/deletecart','CartController@DeleteCart');
+    Route::post('/downcart','CartController@DownCart');
+    Route::post('/upcart','CartController@UpCart');
+
+
+    Route::get('/support','MailController@Getmail');
+    Route::post('/support','MailController@seedmail');
+
+    Route::post('/search','ProductController@Search');
+   
+   
+
+});
 
 
 
@@ -70,6 +101,14 @@ Route::group([
 
         Route::get('/blog/edit/{id}','BlogController@GetEdit');
         Route::post('/blog/edit/{id}','BlogController@PostEdit');
+
+        Route::get('/qluser','QluserController@Qluser');
+
+        Route::get('/qluser/delete/{id}','QluserController@DeleteUser');
+
+        Route::get('/qluser/warning/{id}','QluserController@warning');
+
+        Route::post('/qluser/warning/{id}','QluserController@PostWarning');
 
     });
 

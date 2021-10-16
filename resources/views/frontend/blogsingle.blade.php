@@ -28,7 +28,7 @@
             <a href="">
                 <img src="{{asset('upload/'.$data[0]->hinh)}}" alt="">
             </a>
-            <p>{{$data[0]->noidung}}</p>
+            <p>{{$data[0]->des}}</p>
             <div class="pager-area">
                 <ul class="pager pull-right">
                     @if (!empty($datapre))

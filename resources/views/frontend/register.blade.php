@@ -1,4 +1,4 @@
-@extends('frontend.layout.app')
+@extends('frontend.layout.giaodienlogin')
 @section('content')
 <section id="form"><!--form-->
     <div class="container">
@@ -21,6 +21,7 @@
                         <b>password :</b><input type="password" placeholder="Password" name="password"/>
                         <button type="submit" class="btn btn-default">dang ky</button>
                     </form>
+                    <button><a href="{{url('frontend/login')}}"><i class="fa fa-lock"></i>Đăng nhập</a></button>
                     <ul class="alert text-danger">
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>

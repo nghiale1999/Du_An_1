@@ -79,7 +79,7 @@ class ProductController extends Controller
 
                 Image::make($image->getRealPath())->resize(50, 70)->save($path);
                 Image::make($image->getRealPath())->resize(70,100)->save($path2);
-                Image::make($image->getRealPath())->resize(200, 300)->save($path3);
+                Image::make($image->getRealPath())->resize(700, 900)->save($path3);
            
             }
             return redirect()->back()->with('success','Tao moi thanh cong');      
@@ -176,6 +176,32 @@ class ProductController extends Controller
             return redirect()->back()->withErrors('update that bai');
         }
 
+    }
+
+
+
+
+    public function HomeProduct(){
+        $data = ModelProduct::paginate(6);
+        return view('frontend.HomeProduct',compact('data'));
+
+       
+    }
+
+
+    public function DetailProduct($id){
+        $product = ModelProduct::where('id',$id)->get();
+        $datapre = ModelProduct::where('id','<',$id)->max('id');
+        $datanext = ModelProduct::where('id','>',$id)->min('id');
+        return view('frontend.ProductDetail',compact('product','datapre','datanext'));
+    }
+
+
+    public function Search(Request $request){
+        $name = $request->name;
+        $data = ModelProduct::where('tensp','like','%'.$name.'%')->orwhere('giasp',$name)->paginate(3);
+    
+        return view('frontend.HomeProduct',compact('data'));
     }
 
 }

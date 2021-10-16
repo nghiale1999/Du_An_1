@@ -4,10 +4,12 @@
     <div class="col-3"></div>
     <div class="col-9">
     <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Contextual Table</h4>
-            <h6 class="card-subtitle">Use contextual classes to color table rows or individual cells.</h6>
-        </div>
+        
+        @if (session('success'))
+            <div class="alert alert-success">
+                <p>{{ session('success') }}</p>
+            </div>
+        @endif
         <div class="table-responsive">
             <table class="table">
                 <thead>
@@ -26,7 +28,7 @@
                         <th scope="row">{{$value->id}}</th>
                         <td>{{$value->tieude}}</td>
                         <td>{{$value->hinh}}</td>
-                        <td>{{$value->noidung}}</td>
+                        <td>{{$value->des}}</td>
                         <td><a  class="btn btn-primary" href="{{url('admin/blog/delete/'.$value->id)}}">delete</a></td>
                         <td><a  class="btn btn-primary" href="{{url('admin/blog/edit/'.$value->id)}}">Edit</a></td>
                     </tr>
@@ -38,5 +40,5 @@
         </div>
     </div>
 </div>
-</div>
+
 @endsection

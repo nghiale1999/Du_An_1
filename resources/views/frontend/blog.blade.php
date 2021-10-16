@@ -27,7 +27,7 @@
                 <a href="">
                     <img src="{{asset('upload/'.$value->hinh)}}" alt="" width="500px" height="500px">
                 </a>
-                <p>{{$value->noidung}}</p>
+                <p>{{$value->des}}</p>
                 <a  class="btn btn-primary" href="{{url('frontend/blogsingle/'.$value->id)}}">Read More</a>
             </div>
             @endforeach

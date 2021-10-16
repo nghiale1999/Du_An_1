@@ -17,9 +17,9 @@
                     </a>
                 </li>
                  <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="form-basic.html" aria-expanded="false">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('admin/qluser')}}" aria-expanded="false">
                         <i class="mdi mdi-arrange-bring-forward"></i>
-                        <span class="hide-menu">Form Basic</span>
+                        <span class="hide-menu">User Management</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -28,16 +28,17 @@
                         <span class="hide-menu">Country</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="icon-material.html" aria-expanded="false">
-                        <i class="mdi mdi-face"></i>
-                        <span class="hide-menu">Icon</span>
-                    </a>
-                </li>
+                
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{url('admin/blog')}}" aria-expanded="false">
                         <i class="mdi mdi-file"></i>
                         <span class="hide-menu">Blog</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="icon-material.html" aria-expanded="false">
+                        <i class="mdi mdi-face"></i>
+                        <span class="hide-menu">Icon</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

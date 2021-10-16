@@ -1,4 +1,4 @@
-@extends('frontend.layout.app')
+@extends('frontend.layout.giaodienlogin')
 @section('content')
 <section id="form"><!--form-->
     <div class="container">
@@ -21,6 +21,7 @@
                         </span>
                         <button type="submit" class="btn btn-default">Login</button>
                     </form>
+                    <button><a href="{{url('frontend/register')}}"><i class="fa fa-lock"></i>Đăng ky</a></button>
                     <ul class="alert text-danger">
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>

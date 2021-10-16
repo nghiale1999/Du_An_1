@@ -7,15 +7,16 @@
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
                             <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                            Sportswear
+                            My Product
                         </a>
                     </h4>
                 </div>
                 <div id="sportswear" class="panel-collapse collapse">
                     <div class="panel-body">
                         <ul>
-                            <li><a href="">Nike </a></li>
-                            <li><a href="">Under Armour </a></li>
+                            <li><a href="{{url('frontend/homeproduct')}}">Home Product </a></li>
+                            <li><a href="{{url('frontend/product')}}">Product </a></li>
+                            <li><a href="{{url('frontend/addproduct')}}">Add Product</a></li>
                             <li><a href="">Adidas </a></li>
                             <li><a href="">Puma</a></li>
                             <li><a href="">ASICS </a></li>
@@ -28,14 +29,14 @@
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordian" href="#mens">
                             <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                            Mens
+                            account
                         </a>
                     </h4>
                 </div>
                 <div id="mens" class="panel-collapse collapse">
                     <div class="panel-body">
                         <ul>
-                            <li><a href="">Fendi</a></li>
+                            <li><a href="{{url('frontend/account')}}">account</a></li>
                             <li><a href="">Guess</a></li>
                             <li><a href="">Valentino</a></li>
                             <li><a href="">Dior</a></li>
@@ -112,8 +113,8 @@
             <h2>Brands</h2>
             <div class="brands-name">
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href=""> <span class="pull-right">(50)</span>Acne</a></li>
-                    <li><a href=""> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+                    <li><a href=""> <span class="pull-right">(50)</span>My Product</a></li>
+                    <li><a href=""> <span class="pull-right">(56)</span>Account</a></li>
                     <li><a href=""> <span class="pull-right">(27)</span>Albiro</a></li>
                     <li><a href=""> <span class="pull-right">(32)</span>Ronhill</a></li>
                     <li><a href=""> <span class="pull-right">(5)</span>Oddmolly</a></li>

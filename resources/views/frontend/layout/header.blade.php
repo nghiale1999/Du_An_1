@@ -59,10 +59,11 @@
                 <div class="col-md-8 clearfix">
                     <div class="shop-menu clearfix pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href=""><i class="fa fa-user"></i> Account</a></li>
-                            <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                            <li><a href="{{url('frontend/blog')}}">Blog List</a></li>
+                            <li><a href="{{url('frontend/account')}}"><i class="fa fa-user"></i> Account</a></li>
+                            <li><a href="{{url('frontend/product')}}">Products</a></li>
+                            <li><a href="{{url('frontend/support')}}"><i class="fa fa-crosshairs"></i> Support</a></li>
+                            <li><a href="{{url('frontend/cart')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                             <li><a href="{{url('frontend/login')}}"><i class="fa fa-lock"></i> Login</a></li>
                         </ul>
                     </div>
@@ -85,19 +86,19 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="{{url('frontend/homeproduct')}}" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="shop.html">Products</a></li>
-                                    <li><a href="product-details.html">Product Details</a></li> 
+                                    <li><a href="{{url('frontend/product')}}">Products</a></li>
+                                    <li><a href="">Product Details</a></li> 
                                     <li><a href="checkout.html">Checkout</a></li> 
-                                    <li><a href="cart.html">Cart</a></li> 
-                                    <li><a href="login.html">Login</a></li> 
+                                    <li><a href="{{url('frontend/cart')}}">Cart</a></li> 
+                                    <li><a href="{{url('frontend/login')}}">Login</a></li> 
                                 </ul>
                             </li> 
-                            <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                            <li class="dropdown"><a href="">Blog<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="blog.html">Blog List</a></li>
+                                    <li><a href="{{url('frontend/blog')}}">Blog List</a></li>
                                     <li><a href="blog-single.html">Blog Single</a></li>
                                 </ul>
                             </li> 
@@ -106,12 +107,16 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
+                <form action="{{ url('/frontend/search')}}" method="POST">
+                    @csrf
+                    <div class="col-sm-3">
+                        <input type="text" placeholder="Search" name="name"/>
+                        <input type="submit" name="submit" value="Search">
                     </div>
-                </div>
+                </form>
+                
             </div>
         </div>
     </div><!--/header-bottom-->
 </header><!--/header-->
+

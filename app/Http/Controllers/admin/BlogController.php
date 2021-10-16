@@ -55,7 +55,7 @@ class BlogController extends Controller
         
         $data = $request->all();
         $data['hinh']=$file->getClientOriginalName();
-        $blog->update($data); 
+       
         if($blog->update($data)){
             $file->move('upload', $file->getClientOriginalName());
             return redirect()->back()->with('success','update thanh coong');
@@ -67,7 +67,10 @@ class BlogController extends Controller
 
 
     public function GetDelete($id){
-        ModelBlog::where('id',$id)->delete();
-        return view('admin.deleteBlog');
+        if (ModelBlog::where('id',$id)->delete()) {
+            return redirect()->back()->with('success','delete thanh coong');
+        }else{
+            return redirect()->back()->withErrors('delete that bai');
+        }
     }
 }

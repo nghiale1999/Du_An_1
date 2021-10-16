@@ -32,9 +32,11 @@ class CountryController extends Controller
     }
 
     public function GetDelete($id){
-
-        ModelCountry::where('id',$id)->delete();
-        return view('admin.deleteCountry');
+        if (ModelCountry::where('id',$id)->delete()) {
+            return redirect()->back()->with('success','delete thanh coong');
+        }else{
+            return redirect()->back()->withErrors('delete that bai');
+        }
     }
 
     
